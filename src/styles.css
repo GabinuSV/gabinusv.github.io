@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+/* Estilos generales */
+html, body {
+    background-color: #050505;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+}
+
+body, p, span, div {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.glass-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 24, 24, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.151);
+    padding: 1.8rem 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.glass-header nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0rem;
+}
+
+.glass-header nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+/* Título principal */
+.titulo-animado {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 1000;
+    font-size: 8rem;
+    text-align: center;
+    background-image: linear-gradient(90deg, 
+        #ff8935,
+        #FF8533,
+        #f08e5d,
+        #FF66B2,
+        #f043d9,
+        #d34cfc,
+        #fd58aa,
+        #ff8833
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: suaveGradiente 15s linear infinite;
+    margin-bottom: 0px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.typing::before {
+    content: '> Gabinus <';
+    animation: typing 12s steps(1) infinite;
+}
+
+@keyframes typing {
+    0%, 20% {
+        content: 'Gabinus';
+    }
+    21%, 40% {
+        content: '_gabinus_';
+    }
+    41%, 60% {
+        content: 'Gabinus';
+    }
+    61%, 80% {
+        content: 'gabinus_';
+    }
+    81%, 100% {
+        content: '_gabinus_';
+    }
+}
+
+@keyframes suaveGradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+/* Indicador abajo */
+.indicador-abajo-link {
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.indicador-abajo {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #424242;
+    margin: 20px auto;
+    animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Sección Sobre mí */
+.sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.contenedor-sobre-mi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-sobre-mi {
+    max-width: 1100px;
+    font-size: 1.2em;
+    line-height: 1.7;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.glass-effect {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.699),
+        rgba(0, 0, 0, 0.61)
+    ), url('Images/gab.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.068);
+    border: 2px solid rgba(255, 157, 65, 0.678);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.info-sobre-mi:hover {
+    transform: scale(1.02);
+    background-color: rgba(83, 83, 83, 0.082);
+    border: 2px solid rgba(255, 209, 59, 0.904);
+}
+
+.discord-button {
+    background-color: #00000000;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 18px;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+}
+
+.discord-button:hover {
+    transform: scale(1.50);
+    background-color: #4e59d800;
+}
+
+.discord-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Sección Trabajos */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    background: #000000bb;
+    border-radius: 10px;
+}
+
+.carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000bb;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 2px solid rgba(95, 95, 95, 0.603);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-button:hover {
+    background: rgba(0, 0, 0, 0.486);
+    border-color: rgba(249, 82, 255, 0.8);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+}
+
+/* Sección Habilidades */
+.habilidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.contenedor-habilidades {
+    max-width: 1100px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+        135deg,
+        rgba(10, 10, 10, 0.7),
+        rgba(10, 10, 10, 0.5)
+    );
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 157, 65, 0.678);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contenedor-habilidades:hover {
+    transform: translateY(-5px);
+    border: 2px solid rgba(255, 187, 65, 0.8);
+}
+
+.habilidad {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.habilidad:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.02);
+}
+
+.nombre-habilidad {
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    line-height: 35px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progreso {
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 174, 53, 0.904),
+        rgba(255, 158, 79, 0.8)
+    );
+    border-radius: 20px;
+    transition: width 1s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.progreso::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sección Contacto */
+.contacto {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+    background: #000000;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(242, 102, 255, 0.63);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.social-button svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-button:hover svg,
+.social-button:hover .social-icon {
+    transform: scale(1.1);
+}
+
+.social-button:hover {
+    transform: translateY(-5px);
+    background: #080808;
+    border: 2px solid rgb(255, 176, 102);
+}
+
+/* Footer */
+.footer-animado {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px 0;
+    background-size: 300% 100%;
+    color: #fff;
+    background-color: #0000005d;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .titulo-animado {
+        font-size: 4rem;
+    }
+    
+    .glass-header nav ul {
+        gap: 1.5rem;
+    }
+    
+    .sobre-mi {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .contenedor-sobre-mi {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .foto-perfil {
+        margin-right: 30px;
+    }
+    
+    .info-sobre-mi {
+        text-align: left;
+    }
+    
+    .redes-sociales {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo-animado {
+        font-size: 3rem;
+    }
+    
+    .contenedor-habilidades {
+        padding: 20px;
+    }
+    
+    .habilidad {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+    
+    .nombre-habilidad {
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .titulo-animado {
+        font-size: 2.5rem;
+    }
+}
